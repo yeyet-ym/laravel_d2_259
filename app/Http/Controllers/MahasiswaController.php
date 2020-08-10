@@ -50,11 +50,11 @@ class MahasiswaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode_prodi' => 'required',
-            'nama_prodi' => 'required',
+            'nim' => 'required',
+            'nama_lengkap' => 'required',
         ]);
-        Prodi::create($request->all());
-        return redirect()->route('prodi.index')
+        Mahasiswa::create($request->all());
+        return redirect()->route('mhs.index')
                         ->with('success', 'Data berhasil ditambahkan');
     }
 
